@@ -105,6 +105,7 @@ const deleteNote = asyncHandler(async (req, res) => {
     const reply = `Note ${result.title} with ID ${result._id} deleted`
 
     res.json(reply)
+
 })
 
 module.exports = {
