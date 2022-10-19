@@ -13,6 +13,7 @@ import NewNote from './features/notes/NewNote';
 import Prefetch from './features/auth/Prefetch';
 
 function App() {
+
   return (
     <Routes>
       <Route path='/' element={<Layout />} />
