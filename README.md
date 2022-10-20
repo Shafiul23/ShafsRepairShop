@@ -4,13 +4,13 @@
 
 1. [ ] Replace current sticky note system 
 2. [x] Add a public facing page with basic contact info
-3. [ ] Add an employee login to the notes app 
+3. [x] Add an employee login to the notes app 
 4. [x] Provide a welcome page after login 
 5. [ ] Provide easy navigation 
 6. [ ] Display current user and assigned role 
 7. [x] Provide a logout option 
-8. [ ] Require users to login at least once per week 
-9. [ ] Provide a way to remove user access asap if needed 
+8. [x] Require users to login at least once per week 
+9. [x] Provide a way to remove user access asap if needed 
 10. [x] Notes are assigned to specific users
 11. [x] Notes have a ticket number, title, note body, created and update dates
 12. [x] Notes are either open or completed 
