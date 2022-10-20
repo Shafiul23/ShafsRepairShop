@@ -1,13 +1,14 @@
 import { useRef, useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-
 import { useDispatch } from 'react-redux'
 import { setCredentials } from './authSlice'
 import { useLoginMutation } from './authApiSlice'
-
 import usePersist from '../../hooks/usePersist'
+import useTitle from '../../hooks/useTitle'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 const Login = () => {
+    useTitle('Employee Login')
 
     const userRef = useRef()
     const errRef = useRef()
@@ -37,7 +38,6 @@ const Login = () => {
             setUsername('')
             setPassword('')
             navigate('/dash')
-
         } catch (err) {
             if (!err.status) {
                 setErrMsg('No Server Response');
@@ -58,7 +58,7 @@ const Login = () => {
 
     const errClass = errMsg ? "errmsg" : "offscreen"
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <PulseLoader color={"#FFF"} />
 
     const content = (
 

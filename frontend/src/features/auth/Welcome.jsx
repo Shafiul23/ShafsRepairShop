@@ -1,11 +1,13 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
+import useTitle from "../../hooks/useTitle"
 
 const Welcome = () => {
 
     // const [user, setUser] = useState('')
     const { username, isManager, isAdmin } = useAuth()
+
+    useTitle(`techNotes: ${username}`)
 
     const date = new Date()
     const today = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(date)
