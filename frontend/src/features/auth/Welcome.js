@@ -1,23 +1,19 @@
-import { Link } from "react-router-dom"
-import useAuth from "../../hooks/useAuth"
-import useTitle from "../../hooks/useTitle"
+import { Link } from 'react-router-dom'
+import useAuth from '../../hooks/useAuth'
 
 const Welcome = () => {
 
-    // const [user, setUser] = useState('')
     const { username, isManager, isAdmin } = useAuth()
 
-    useTitle(`techNotes: ${username}`)
-
     const date = new Date()
-    const today = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(date)
+    const today = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'long' }).format(date)
 
     const content = (
         <section className="welcome">
 
             <p>{today}</p>
 
-            <h1>Welcome, {username}!</h1>
+            <h1>Welcome {username}!</h1>
 
             <p><Link to="/dash/notes">View techNotes</Link></p>
 
@@ -32,5 +28,4 @@ const Welcome = () => {
 
     return content
 }
-
 export default Welcome

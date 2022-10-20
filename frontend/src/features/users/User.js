@@ -1,16 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from 'react-router-dom'
-import { useGetUsersQuery } from './usersApiSlice'
-import { memo } from 'react'
+
+import { useSelector } from 'react-redux'
+import { selectUserById } from './usersApiSlice'
 
 const User = ({ userId }) => {
-
-    const { user } = useGetUsersQuery("usersList", {
-        selectFromResult: ({ data }) => ({
-            user: data?.entities[userId]
-        }),
-    })
+    const user = useSelector(state => selectUserById(state, userId))
 
     const navigate = useNavigate()
 
@@ -18,6 +14,7 @@ const User = ({ userId }) => {
         const handleEdit = () => navigate(`/dash/users/${userId}`)
 
         const userRolesString = user.roles.toString().replaceAll(',', ', ')
+
         const cellStatus = user.active ? '' : 'table__cell--inactive'
 
         return (
@@ -37,7 +34,4 @@ const User = ({ userId }) => {
 
     } else return null
 }
-
-const memoizedUser = memo(User)
-
-export default memoizedUser
+export default User

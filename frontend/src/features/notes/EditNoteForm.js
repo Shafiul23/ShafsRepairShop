@@ -24,14 +24,13 @@ const EditNoteForm = ({ note, users }) => {
 
     const navigate = useNavigate()
 
-    const [text, setText] = useState(note.text)
     const [title, setTitle] = useState(note.title)
-    const [userId, setUserId] = useState(note.user)
+    const [text, setText] = useState(note.text)
     const [completed, setCompleted] = useState(note.completed)
-
+    const [userId, setUserId] = useState(note.user)
 
     useEffect(() => {
-        console.log(isSuccess)
+
         if (isSuccess || isDelSuccess) {
             setTitle('')
             setText('')
@@ -41,8 +40,8 @@ const EditNoteForm = ({ note, users }) => {
 
     }, [isSuccess, isDelSuccess, navigate])
 
-    const onTextChanged = e => setText(e.target.value)
     const onTitleChanged = e => setTitle(e.target.value)
+    const onTextChanged = e => setText(e.target.value)
     const onCompletedChanged = e => setCompleted(prev => !prev)
     const onUserIdChanged = e => setUserId(e.target.value)
 
@@ -52,16 +51,14 @@ const EditNoteForm = ({ note, users }) => {
         if (canSave) {
             await updateNote({ id: note.id, user: userId, title, text, completed })
         }
-
     }
-
 
     const onDeleteNoteClicked = async () => {
         await deleteNote({ id: note.id })
     }
 
-    const created = new Date(note.createdAt).toLocaleString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
-    const updated = new Date(note.updatedAt).toLocaleString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+    const created = new Date(note.createdAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+    const updated = new Date(note.updatedAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
 
     const options = users.map(user => {
         return (
@@ -78,6 +75,7 @@ const EditNoteForm = ({ note, users }) => {
     const validTextClass = !text ? "form__input--incomplete" : ''
 
     const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
+
 
     let deleteButton = null
     if (isManager || isAdmin) {

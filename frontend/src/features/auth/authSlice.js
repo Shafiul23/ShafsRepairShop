@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const authSlice = createSlice({
     name: 'auth',
@@ -8,7 +8,7 @@ const authSlice = createSlice({
             const { accessToken } = action.payload
             state.token = accessToken
         },
-        logOUt: (state, action) => {
+        logOut: (state, action) => {
             state.token = null
         },
     }

@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 const usePersist = () => {
-    const [persist, setPersist] = useState(JSON.parse(localStorage.getItem("persist")) || false)
+    const [persist, setPersist] = useState(JSON.parse(localStorage.getItem("persist")) || false);
 
     useEffect(() => {
         localStorage.setItem("persist", JSON.stringify(persist))
@@ -9,5 +9,4 @@ const usePersist = () => {
 
     return [persist, setPersist]
 }
-
 export default usePersist

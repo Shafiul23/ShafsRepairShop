@@ -33,7 +33,6 @@ const NewNoteForm = ({ users }) => {
     const onUserIdChanged = e => setUserId(e.target.value)
 
     const canSave = [title, text, userId].every(Boolean) && !isLoading
-    // add user.id as condition for cansave?
 
     const onSaveNoteClicked = async (e) => {
         e.preventDefault()
@@ -47,13 +46,13 @@ const NewNoteForm = ({ users }) => {
             <option
                 key={user.id}
                 value={user.id}
-            > {user.username} </option>
+            > {user.username}</option >
         )
     })
 
     const errClass = isError ? "errmsg" : "offscreen"
-    const validTitleClass = !title ? 'form__input--incomplete' : ''
-    const validTextClass = !text ? 'form__input--incomplete' : ''
+    const validTitleClass = !title ? "form__input--incomplete" : ''
+    const validTextClass = !text ? "form__input--incomplete" : ''
 
     const content = (
         <>
@@ -73,33 +72,33 @@ const NewNoteForm = ({ users }) => {
                     </div>
                 </div>
                 <label className="form__label" htmlFor="title">
-                    Title: </label>
+                    Title:</label>
                 <input
                     className={`form__input ${validTitleClass}`}
                     id="title"
                     name="title"
-                    type="title"
+                    type="text"
+                    autoComplete="off"
                     value={title}
                     onChange={onTitleChanged}
                 />
 
                 <label className="form__label" htmlFor="text">
-                    Text: </label>
-                <input
-                    className={`form__input ${validTextClass}`}
+                    Text:</label>
+                <textarea
+                    className={`form__input form__input--text ${validTextClass}`}
                     id="text"
                     name="text"
-                    type="text"
                     value={text}
                     onChange={onTextChanged}
                 />
 
-                <label className="form__label" htmlFor="username">
+                <label className="form__label form__checkbox-container" htmlFor="username">
                     ASSIGNED TO:</label>
                 <select
                     id="username"
                     name="username"
-                    className={`form__select`}
+                    className="form__select"
                     value={userId}
                     onChange={onUserIdChanged}
                 >

@@ -18,7 +18,6 @@ const NOTES_REGEX = /^\/dash\/notes(\/)?$/
 const USERS_REGEX = /^\/dash\/users(\/)?$/
 
 const DashHeader = () => {
-
     const { isManager, isAdmin } = useAuth()
 
     const navigate = useNavigate()
@@ -145,5 +144,4 @@ const DashHeader = () => {
 
     return content
 }
-
 export default DashHeader
