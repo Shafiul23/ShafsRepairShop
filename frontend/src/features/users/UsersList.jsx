@@ -27,7 +27,9 @@ const UsersList = () => {
 
         const { ids } = users
 
-        const tableContent = ids?.length && ids.map(userId => <User key={userId} userId={userId} />)
+        const tableContent = ids?.length
+            ? ids.map(userId => <User key={userId} userId={userId} />)
+            : null
 
         content = (
             <table className="table table--users">
