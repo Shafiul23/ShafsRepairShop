@@ -52,6 +52,7 @@
   color: var(--COLOR);
   display: grid;
   place-content: center;
+  margin: auto;
 }
 
 .icon-button:hover,
@@ -65,13 +66,12 @@
 
 .button__label {
   display: grid;
+  vertical-align: text-bottom;
   font-size: 1rem;
 }
 
 .grouping {
   display: grid;
-  align-items: center;
-  text-align: center;
 }
 
 /* || GENERAL STYLES */
