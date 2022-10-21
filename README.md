@@ -6,6 +6,9 @@ Shaf's repair shop deals with fixing technical issues for its clients. To do so,
 
 The first step in creating this application was to build the database. This was done using MongoDB, a no SQL database that would allow the storage of users and notes. Next, Node.js and Express.js was used for the server-side code and the middleware, as well as assisting with the routing of the application. Once the backend was created, a combination of React and Redux was used to design the front end. These two JavaScript libraries helped with managing the state of the application as well as sending requests to the backend. 
 
+Finally, render.com was used to deploy both the client and the server. The link can be found here:
+https://technotes-33dz.onrender.com/
+
 
 ### Built With
 
