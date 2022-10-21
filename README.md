@@ -15,11 +15,10 @@ The first step in creating this application was to build the database. This was 
 * [![Node][Node.js]][Node-url]
 * [![Redux][Redux.js]][Redux-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## User Stories
 
-1. [x ] Replace current sticky note system 
+1. [x] Replace current sticky note system 
 2. [x] Add a public facing page with basic contact info
 3. [x] Add an Employee login to the notes app 
 4. [x] Provide a welcome page after login 
@@ -52,25 +51,28 @@ The first step in creating this application was to build the database. This was 
 ## Usage
 
 ![Login page](techNotesScreenshots/loginpage.png?raw=true)
+_Login page. Here, employees may click Trust This Device to remain logged in for upto 7 days._ <br/><br/>
 ![Welcome page](techNotesScreenshots/welcomepage.png?raw=true)
+_Welcome page. All employees may view and add techNotes, but only managers and admins can view and add users._ <br/><br/>
 ![Notes list](techNotesScreenshots/noteslist.png?raw=true)
+_Notes list. Here, all tickets are available to see for admins. Completed notes occupy the bottom of the list. Employees can only see tickets that they are assigned to._ <br/><br/>
 ![Edit Notes](techNotesScreenshots/editnotes.png?raw=true)
+_Edit note page. Employees can edit the title, text and completion status in the edit page. Attempting to change a note title into one that already exists will result in a duplication error._ <br/><br/>
 ![New Note](techNotesScreenshots/newnote.png?raw=true)
+_New note. Employees can create new notes in this page and assign it to any member of Shaf's Repair Shop._<br/><br/>
 ![User list](techNotesScreenshots/userlist.png?raw=true)
+_User list. Admins and managers are able to view all current members of Shaf's Repair Shop._<br/><br/>
 ![Edit user](techNotesScreenshots/edituser.png?raw=true)
+_Edit user page. Admins and Managers are able to edit the username, password and active status of all employees._<br/><br/>
 ![New user](techNotesScreenshots/newuser.png?raw=true)
+_New user page. Admins and Managers can create new users with the option to assign them with any role._<br/><br/>
 
 ## Contact 
 
-Email - shafiulmirza@hotmail.com
-GitHub - https://github.com/Shafiul23
+Email - shafiulmirza@hotmail.com <br/>
+GitHub - https://github.com/Shafiul23 <br/>
 LinkedIn - www.linkedin.com/in/shafiul-mirza-32871b246
 
-## Improvements
-
- This project took me one week to complete. If I were to spend more time on it, some areas of improvement that I would implement would be: 
- 
- - Fully test both the back end and the front end
 
  <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -96,3 +98,7 @@ This project followed a guide by a YouTuber named, Dave Gray.
 https://www.youtube.com/watch?v=CvCiNeLnZ00&list=PL0Zuz27SZ-6P4dQUsoDatjEGpmBpcOW8V&index=14
 
 Gray is able to communicate intermediate - difficult concepts within software engineering in a clear and concise manner. I highly recommend his channel for engineers who are looking to improve or brush up on their skills. 
+
+### Potential improvements
+
+If I were to revisit this project and invest some more time into it, I would implement testing for both the backend and the front end. Additionally, I could allow for drafts to be saved when creating a new note. 
