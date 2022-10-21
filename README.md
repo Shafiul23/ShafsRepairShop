@@ -22,3 +22,9 @@
 18. [ ] Only mangers and admins can access user settings
 19. [ ] Only mangers and admins can create new users
 20. [ ] Desktop mode is most important but should be available in mobile
+
+## Improvements
+
+ This project took me one week to complete. If I were to spend more time on it, some areas of improvement that I would implement would be: 
+ 
+ - Fully test both the back end and the front end

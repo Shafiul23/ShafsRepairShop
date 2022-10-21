@@ -63,6 +63,17 @@
   visibility: hidden;
 }
 
+.button__label {
+  display: grid;
+  font-size: 1rem;
+}
+
+.grouping {
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
 /* || GENERAL STYLES */
 
 body {

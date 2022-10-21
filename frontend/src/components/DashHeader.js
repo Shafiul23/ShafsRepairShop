@@ -46,26 +46,32 @@ const DashHeader = () => {
     let newNoteButton = null
     if (NOTES_REGEX.test(pathname)) {
         newNoteButton = (
-            <button
-                className="icon-button"
-                title="New Note"
-                onClick={onNewNoteClicked}
-            >
-                <FontAwesomeIcon icon={faFileCirclePlus} />
-            </button>
+            <div className="grouping">
+                <button
+                    className="icon-button"
+                    title="New Note"
+                    onClick={onNewNoteClicked}
+                >
+                    <FontAwesomeIcon icon={faFileCirclePlus} />
+                </button>
+                <label className="button__label">New note</label>
+            </div>
         )
     }
 
     let newUserButton = null
     if (USERS_REGEX.test(pathname)) {
         newUserButton = (
-            <button
-                className="icon-button"
-                title="New User"
-                onClick={onNewUserClicked}
-            >
-                <FontAwesomeIcon icon={faUserPlus} />
-            </button>
+            <div className="grouping">
+                <button
+                    className="icon-button"
+                    title="New User"
+                    onClick={onNewUserClicked}
+                >
+                    <FontAwesomeIcon icon={faUserPlus} />
+                </button>
+                <label className="button__label">User Settings</label>
+            </div>
         )
     }
 
@@ -73,13 +79,16 @@ const DashHeader = () => {
     if (isManager || isAdmin) {
         if (!USERS_REGEX.test(pathname) && pathname.includes('/dash')) {
             userButton = (
-                <button
-                    className="icon-button"
-                    title="Users"
-                    onClick={onUsersClicked}
-                >
-                    <FontAwesomeIcon icon={faUserGear} />
-                </button>
+                <div className="grouping">
+                    <button
+                        className="icon-button"
+                        title="Users"
+                        onClick={onUsersClicked}
+                    >
+                        <FontAwesomeIcon icon={faUserGear} />
+                    </button>
+                    <label className="button__label">Users</label>
+                </div>
             )
         }
     }
@@ -87,24 +96,30 @@ const DashHeader = () => {
     let notesButton = null
     if (!NOTES_REGEX.test(pathname) && pathname.includes('/dash')) {
         notesButton = (
-            <button
-                className="icon-button"
-                title="Notes"
-                onClick={onNotesClicked}
-            >
-                <FontAwesomeIcon icon={faFilePen} />
-            </button>
+            <div className="grouping">
+                <button
+                    className="icon-button"
+                    title="Notes"
+                    onClick={onNotesClicked}
+                >
+                    <FontAwesomeIcon icon={faFilePen} />
+                </button>
+                <label className="button__label">Notes list</label>
+            </div>
         )
     }
 
     const logoutButton = (
-        <button
-            className="icon-button"
-            title="Logout"
-            onClick={sendLogout}
-        >
-            <FontAwesomeIcon icon={faRightFromBracket} />
-        </button>
+        <div className="grouping">
+            <button
+                className="icon-button"
+                title="Logout"
+                onClick={sendLogout}
+            >
+                <FontAwesomeIcon icon={faRightFromBracket} />
+            </button>
+            <label className="button__label">Logout</label>
+        </div>
     )
 
     const errClass = isError ? "errmsg" : "offscreen"
